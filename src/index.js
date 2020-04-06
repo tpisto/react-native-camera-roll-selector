@@ -155,7 +155,7 @@ export default class CameraRollSelector extends React.PureComponent {
     
 	componentDidUpdate(prevProps, prevState, snapshot) {
 		if(this.props.selected != prevProps.selected) {
-			this.setState({ selected: selected });
+			this.setState({ selected: this.props.selected });
 		}
 	}
 	

@@ -152,7 +152,13 @@ export default class CameraRollSelector extends React.PureComponent {
             this.fetch();
         }
     }
-
+    
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		if(this.props.selected != prevProps.selected) {
+			this.setState({ selected: selected });
+		}
+	}
+	
     fetch = () => {
         if (!this.state.loadingMore) {
             // console.log("fetch");
